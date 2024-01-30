@@ -16,7 +16,7 @@ int main(void){
     therefore we initialised first two terms of the code explicitly
     */
     // we iterate through the loop for the total number of terms
-    for(int i; i<=num; i++){
+    for(int i=3; i<=num; i++){
         // the next term is the sum of the prev two
         ans = term1 + term2;
         // now that term1 has been added, the new 2nd last value becomes term2's current value
