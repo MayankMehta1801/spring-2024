@@ -1,0 +1,81 @@
+#include <stdio.h>
+
+int main(void){
+    // initialising the number of elements in an array
+    int num;
+    scanf("%d", &num);
+    // making the array of that size
+    int arr[num];
+    
+    // taking the input 
+    for(int i=0; i<num; i++){
+        scanf("%d", &arr[i]);
+    }
+    
+    // we define a flag for palindrome
+    int flag = 0;
+    
+    // we check whether the number of elements  is odd or even
+    
+    // logic for both even and odd: slice the array into two separate arrays 
+    // then iterate through each element of both arrays
+    // if there is a discrepancy then flag turns to 1
+    // if flag is 1 then we print false
+    
+    // in case of even we iterate from 0 to num/2 -1
+    if(num%2==0){
+        int part1[num/2], part2[num/2], flag=0;
+        for(int i=0; i<=((num/2)-1); i++){
+            part1[i] = arr[i];
+        }
+        for(int i=(num-1); i>=(num/2); i--){
+            part2[num-i-1] = arr[i];
+        }
+        for(int i=0; i<=((num/2)-1); i++){
+            if(part1[i] != part2[i]){
+                flag = 1;
+            }
+        }
+        
+        // checking the flag
+        if(flag==1){
+            printf("false");
+        }
+        else{
+            printf("true");
+        }
+    }
+    
+    // in case of odd we iterate from 0 to (num-1)/2 - num-1
+    // for example in case of 7 we iterate from 0 to (7-1)/2 - 1 = 2
+    if(num%2 != 0){
+        // declaring a new variable n = num-1 to escape redundancy
+        int n = (num-1);
+        int part1[n/2], part2[n/2], flag=0;
+        
+        // same array slicing as even but the parameters are different
+        for(int i=0; i<=((n/2)-1); i++){
+            part1[i] = arr[i];
+        }
+        for(int i=n; i>=((n/2)+1); i--){
+            part2[num-i-1] = arr[i];
+        }
+        for(int i=0; i<=((n/2)-1); i++){
+            if(part1[i] != part2[i]){
+                flag = 1;
+            }
+        }
+        
+        // checking the flag
+        if(flag==1){
+            printf("false");
+        }
+        else{
+            printf("true");
+        }
+    }
+        
+    
+}
+
+// code by b23mt1030
