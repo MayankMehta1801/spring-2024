@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+int factorial(int num){
+    int fact=1;
+    // if num is negative it returns -1
+    if (num<0) { 
+        fact = -1;
+    }
+    
+    // 0! = 1
+    if (num == 0){
+        fact = 1;
+    }
+    
+    // if number is positive
+    if (num>0){
+        // loop iterates through an integer i and multiplies the incrementing values of i 
+        // to fact
+        for(int i=1; i<=num; i++){
+            fact *= i;
+        }  
+    }
+    return fact;
+}
+    
+
+int main(void){
+    int n, r;
+    scanf("%d %d", &n, &r);
+    int fact_n = factorial(n), fact_r = factorial(r), fact_n_r = factorial(n-r);
+    // if inappropriate numbers are entered then we print 0
+    if (fact_n == -1 || fact_r == -1 || fact_n_r == -1){
+        printf("0");
+    }
+    // if appropriate numbers are entered then we print the nCr
+    else{
+        printf("%d", fact_n / (fact_r * fact_n_r));
+    }
+    
+}
