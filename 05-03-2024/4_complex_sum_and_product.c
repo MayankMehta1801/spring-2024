@@ -1,4 +1,8 @@
-// Online C compiler to run C program online
+/*
+Create a structure named Complex to represent a complex number with real and
+imaginary parts. Write a C program to add and multiply two complex numbers up
+to 2 decimal precisions.
+*/
 #include <stdio.h>
 
 #define ll long long 
