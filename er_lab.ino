@@ -1,10 +1,10 @@
 int redLed = 12;
 
-int greenLed = 11;
+int greenLed = 10;
 
-int buzzer = 10;
+int buzzer = 8;
 
-int smokeA0 = A5;
+int smokeA0 = A0;
 
 // Your threshold value
 
